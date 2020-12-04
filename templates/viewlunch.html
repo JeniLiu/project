@@ -1,0 +1,33 @@
+{%extends "baseadmin.html"%}
+{%block content%}
+
+        <!-- Page Content  -->
+    <center>
+      <h1>View Lunch Orders</h1>
+      <table border = 1 width = "95%">
+           <thead>
+              <td width="25%"><center>Date</center></td>
+              <td width="15%"><center>Name</center></td>
+              <td width="25%"><center>Email</center></td>
+              <td><center>Fries</center></td>
+           </thead>
+           
+           {% for row in rows %}
+              <tr>
+                 <td><center>{{row["date"]}}</center></td>
+                 <td><center>{{row["name"]}}</center></td>
+                 <td><center>{{row["email"]}}</center></td>
+                 <td><center>{{row["fries"]}}</center></td>
+              </tr>
+           {% endfor %}
+        </table>
+
+        <br>
+
+        <div class="col-sm-6"> 
+            <a class="btn btn-dark" href="admin" role="button"style="font-size : 20px; width: 200px; height: 50px;">
+            Return Home</a>
+          </div>
+      </center>
+      
+{%endblock%}
